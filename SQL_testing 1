@@ -1,0 +1,25 @@
+-- Criação da tabela "Viagens"
+CREATE TABLE Viagens (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    destino VARCHAR(100),
+    data_partida DATE,
+    data_retorno DATE,
+    custo DECIMAL(10, 2),
+    descricao TEXT
+);
+
+-- Inserção de alguns dados de exemplo
+INSERT INTO Viagens (destino, data_partida, data_retorno, custo, descricao)
+VALUES
+    ('Paris', '2024-07-15', '2024-07-20', 1500.00, 'Viagem romântica para Paris'),
+    ('Nova York', '2024-08-10', '2024-08-20', 2500.00, 'Viagem de negócios para Nova York'),
+    ('Tóquio', '2024-09-05', '2024-09-15', 3000.00, 'Viagem de férias para Tóquio');
+
+-- Consulta para obter todas as viagens cadastradas
+SELECT * FROM Viagens;
+
+-- Consulta para obter viagens com custo superior a $2000
+SELECT * FROM Viagens WHERE custo > 2000.00;
+
+-- Consulta para obter viagens com destino contendo a palavra 'Paris'
+SELECT * FROM Viagens WHERE destino LIKE '%Paris%';
